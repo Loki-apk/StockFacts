@@ -1,0 +1,22 @@
+.env
+__pycache__/
+.DS_Store
+report.md
+report.html
+
+# venv / build
+.venv/
+.venv-test/
+dist/
+build/
+*.egg-info/
+
+# runtime state
+cache/
+*.db
+
+# tooling
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,2 @@
+# Drop frozen provider responses here (one dir per golden ticker).
+# See tests/conftest.py for the ticker set to cover.
