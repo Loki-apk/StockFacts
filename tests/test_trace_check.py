@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from stocks.assemble import build_report
-from stocks.qa import trace_check
-from stocks.scoring import compute_sub_scores
+from stockfact.assemble import build_report
+from stockfact.qa import trace_check
+from stockfact.scoring import compute_sub_scores
 
 
 def _report(ctx):
@@ -50,8 +50,8 @@ def test_dates_and_window_labels_are_not_flagged(sample_ctx):
 def test_numbers_from_headlines_and_risk_text_trace(sample_ctx):
     from datetime import date
 
-    from stocks.models.enums import FlagType, Sentiment, Severity, Theme
-    from stocks.models.reports import NewsSentimentItem, RiskFlag
+    from stockfact.models.enums import FlagType, Sentiment, Severity, Theme
+    from stockfact.models.reports import NewsSentimentItem, RiskFlag
 
     sample_ctx.news_report.items = [
         NewsSentimentItem(

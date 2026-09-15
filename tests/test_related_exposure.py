@@ -9,8 +9,8 @@ from datetime import date
 
 import pandas as pd
 
-from stocks.fetch import related_exposure as re_mod
-from stocks.run_context import RunContext
+from stockfact.fetch import related_exposure as re_mod
+from stockfact.run_context import RunContext
 
 
 def _ctx(ticker: str = "NVDA", company_name: str = "NVIDIA Corporation") -> RunContext:

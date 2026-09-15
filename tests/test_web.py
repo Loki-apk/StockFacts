@@ -8,7 +8,7 @@ import pytest
 pytest.importorskip("fastapi")
 from fastapi.testclient import TestClient  # noqa: E402
 
-from stocks.web.app import app  # noqa: E402
+from stockfact.web.app import app  # noqa: E402
 
 client = TestClient(app)
 
@@ -16,7 +16,7 @@ client = TestClient(app)
 def test_index_serves_html():
     r = client.get("/")
     assert r.status_code == 200
-    assert "Stock Evaluation" in r.text
+    assert "StockFact" in r.text
     assert "Full analysis" in r.text
 
 
@@ -30,9 +30,9 @@ def test_report_payload_shape(monkeypatch):
     # stub the pipeline so the route logic is exercised without hitting providers
     import importlib
 
-    from stocks.models.reports import StockEvaluationReport
+    from stockfact.models.reports import StockEvaluationReport
 
-    webapp = importlib.import_module("stocks.web.app")
+    webapp = importlib.import_module("stockfact.web.app")
 
     def fake_evaluate(ticker, *, use_llm=None):
         base = StockEvaluationReport.model_validate({**_MINIMAL, "ticker": ticker})

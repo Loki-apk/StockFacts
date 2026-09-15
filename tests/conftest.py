@@ -15,7 +15,7 @@ from datetime import date
 
 import pytest
 
-from stocks.models.reports import (
+from stockfact.models.reports import (
     FundamentalsReport,
     MetricWithContext,
     NarrativeSections,
@@ -26,16 +26,16 @@ from stocks.models.reports import (
     TechnicalReport,
     ValuationContext,
 )
-from stocks.run_context import RunContext
+from stockfact.run_context import RunContext
 
-os.environ.setdefault("STOCKS_SKIP_LLM", "1")
+os.environ.setdefault("STOCKFACT_SKIP_LLM", "1")
 
 
 @pytest.fixture(autouse=True)
 def _isolated_dbs(tmp_path, monkeypatch):
-    monkeypatch.setenv("STOCKS_CACHE_DB", str(tmp_path / "cache.db"))
-    monkeypatch.setenv("STOCKS_RUNS_DB", str(tmp_path / "runs.db"))
-    from stocks.providers import base
+    monkeypatch.setenv("STOCKFACT_CACHE_DB", str(tmp_path / "cache.db"))
+    monkeypatch.setenv("STOCKFACT_RUNS_DB", str(tmp_path / "runs.db"))
+    from stockfact.providers import base
 
     base.reset_provider()
 

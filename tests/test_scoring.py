@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from stocks.scoring import compute_sub_scores
+from stockfact.scoring import compute_sub_scores
 
 
 def test_scores_bounded_and_deterministic(sample_ctx):
