@@ -103,9 +103,8 @@ stockfact-web                    # http://127.0.0.1:8000
 stockfact-web --port 9000 --reload
 ```
 
-Type in a ticker, pick Simple / Full / JSON, and you get score bars, QA
-flags, and a diff against the last time you checked that ticker (if you
-have). Turn off "Full analysis" for an instant deterministic-only report —
+Type in a ticker, pick Simple / Full / JSON, and you get score bars and QA
+flags. Turn off "Full analysis" for an instant deterministic-only report —
 no waiting on an LLM call.
 
 ## Running the tests

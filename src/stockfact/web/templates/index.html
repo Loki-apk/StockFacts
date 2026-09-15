@@ -113,7 +113,6 @@
   <div class="card hidden" id="result">
     <div class="meta" id="meta"></div>
     <div id="qa"></div>
-    <div id="changed"></div>
     <div class="scores" id="scores"></div>
     <div class="tabs">
       <button class="tab active" data-t="simple">Simple</button>
@@ -166,10 +165,6 @@ function render() {
   $('#qa').innerHTML = DATA.qa_violations.length
     ? `<div class="warn"><strong>${DATA.qa_violations.length} automatic fact-check flag(s)</strong>
        <ul>${DATA.qa_violations.map(v => `<li>${v}</li>`).join('')}</ul></div>` : '';
-
-  $('#changed').innerHTML = DATA.changed_since_last_run.length
-    ? `<div class="warn" style="background:var(--bg);border-color:var(--line);color:var(--muted)">
-       <strong>Since last run:</strong><ul>${DATA.changed_since_last_run.map(v => `<li>${v}</li>`).join('')}</ul></div>` : '';
 
   const s = DATA.scores;
   $('#scores').innerHTML =
